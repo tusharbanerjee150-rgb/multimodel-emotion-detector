@@ -1,0 +1,243 @@
+/* ==========================================================================
+   SERENE EARTH AI — BOTANICAL LUXURY DESIGN THEME
+   High-Contrast Dark & Light Mode Stylesheet
+   Project Exhibition – I (DSN2098) • Group-52
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-main: #0B0F0E;
+  --bg-card: rgba(19, 26, 23, 0.85);
+  --bg-card-hover: rgba(25, 36, 31, 0.95);
+  --border-card: rgba(53, 79, 70, 0.45);
+  --border-card-hover: rgba(132, 169, 140, 0.6);
+  
+  --sage-300: #A3C9A8;
+  --sage-400: #84A98C;
+  --sage-500: #52796F;
+  --sage-600: #354F52;
+  --sage-700: #2F3E46;
+
+  --olive-500: #6B8E23;
+  --olive-600: #557519;
+  
+  --terracotta: #E07A5F;
+  --peach: #DDA15E;
+  --cream: #F5F3EF;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #E2E8F0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(82, 121, 111, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(221, 161, 94, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(107, 142, 35, 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Botanical Glass Card */
+.serene-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-card);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(82, 121, 111, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.serene-card:hover {
+  border-color: var(--border-card-hover);
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.55), 0 0 20px 2px rgba(132, 169, 140, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME HIGH-CONTRAST OVERRIDES
+   -------------------------------------------------------------------------- */
+body.theme-light {
+  background-color: #F8F6F0;
+  color: #1E293B;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(82, 121, 111, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(221, 161, 94, 0.07) 0%, transparent 50%);
+}
+
+body.theme-light .serene-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+body.theme-light .serene-card:hover {
+  border-color: #84A98C;
+  box-shadow: 0 12px 28px -4px rgba(82, 121, 111, 0.15);
+}
+
+body.theme-light .btn-serene-ghost {
+  background: #EFECE6;
+  color: #334155;
+  border: 1px solid #D8D2C4;
+}
+
+body.theme-light .btn-serene-ghost:hover {
+  background: #E2DDD4;
+  color: #0F172A;
+  border-color: #84A98C;
+}
+
+body.theme-light .bg-\[\#141C18\],
+body.theme-light .bg-\[\#121916\],
+body.theme-light .bg-\[\#0E1412\],
+body.theme-light .bg-\[\#151F1B\],
+body.theme-light .bg-\[\#1D2B24\],
+body.theme-light .bg-\[\#1A2520\],
+body.theme-light .bg-\[\#28211E\] {
+  background-color: #F3EFEA !important;
+}
+
+body.theme-light .border-\[\#263630\],
+body.theme-light .border-\[\#26332E\],
+body.theme-light .border-\[\#2F423B\],
+body.theme-light .border-\[\#354F52\],
+body.theme-light .border-\[\#483329\] {
+  border-color: #DDD7CD !important;
+}
+
+body.theme-light .text-slate-100,
+body.theme-light .text-slate-200 {
+  color: #0F172A !important;
+}
+
+body.theme-light .text-slate-300,
+body.theme-light .text-slate-400 {
+  color: #334155 !important;
+}
+
+body.theme-light .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* Recommended Mode Card Glow */
+.serene-card-highlight {
+  border: 1.5px solid rgba(132, 169, 140, 0.7);
+  box-shadow: 0 0 25px 0 rgba(82, 121, 111, 0.25), inset 0 0 15px 0 rgba(82, 121, 111, 0.08);
+}
+
+/* Botanical Buttons */
+.btn-serene-primary {
+  background: linear-gradient(135deg, #52796F 0%, #354F52 100%);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(163, 201, 168, 0.35);
+  box-shadow: 0 4px 14px 0 rgba(53, 79, 70, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-serene-primary:hover {
+  background: linear-gradient(135deg, #628E83 0%, #3D5C5F 100%);
+  border-color: rgba(163, 201, 168, 0.6);
+  box-shadow: 0 6px 20px 0 rgba(82, 121, 111, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-serene-olive {
+  background: linear-gradient(135deg, #6B8E23 0%, #4E6746 100%);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(184, 212, 126, 0.35);
+  box-shadow: 0 4px 14px 0 rgba(78, 103, 70, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-serene-olive:hover {
+  background: linear-gradient(135deg, #7C9F2D 0%, #56734D 100%);
+  transform: translateY(-1px);
+}
+
+.btn-serene-terracotta {
+  background: linear-gradient(135deg, #E07A5F 0%, #C87D55 100%);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(244, 162, 97, 0.35);
+  box-shadow: 0 4px 14px 0 rgba(200, 125, 85, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-serene-terracotta:hover {
+  background: linear-gradient(135deg, #E78C73 0%, #D48961 100%);
+  transform: translateY(-1px);
+}
+
+.btn-serene-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: #CBD5E1;
+  border: 1px solid rgba(82, 121, 111, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-serene-ghost:hover {
+  background: rgba(82, 121, 111, 0.18);
+  color: #FFFFFF;
+  border-color: rgba(132, 169, 140, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F0E;
+}
+
+body.theme-light ::-webkit-scrollbar-track {
+  background: #F8F6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F3E46;
+  border-radius: 9999px;
+}
+
+body.theme-light ::-webkit-scrollbar-thumb {
+  background: #C4BEB2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52796F;
+}
+
+/* Leaf Flourish Background Watermarks */
+.leaf-flourish-sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(132, 169, 140, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(132, 169, 140, 0.6);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}

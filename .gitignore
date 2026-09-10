@@ -1,0 +1,27 @@
+# Datasets (Excluded due to large size > 13 GB)
+datasets/
+part2_datasets/
+
+# Large model checkpoints / cache
+*.ckpt
+
+# Python runtime & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+*.tmp
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Local user/app persistent data
+data/app_storage.json
+temp_chrome_data/
+
+# IDE / Editor configuration
+.vscode/
+.idea/
+.DS_Store

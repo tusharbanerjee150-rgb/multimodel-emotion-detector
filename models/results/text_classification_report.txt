@@ -1,0 +1,20 @@
+=================================================================
+TEXT EMOTION (NLP) - HIGH-PRECISION CLASSIFICATION REPORT
+=================================================================
+Best Validation Accuracy: 79.77%
+Unseen Test Accuracy    : 79.04%
+
+              precision    recall  f1-score   support
+
+       Angry     0.8102    0.6066    0.6938       577
+     Disgust     0.6071    0.2698    0.3736        63
+        Fear     0.8407    0.8212    0.8308       302
+       Happy     0.8890    0.8494    0.8687      1952
+     Neutral     0.6790    0.8070    0.7375      1596
+         Sad     0.9221    0.8266    0.8718       773
+    Surprise     0.5788    0.6707    0.6214       334
+
+    accuracy                         0.7904      5597
+   macro avg     0.7610    0.6930    0.7139      5597
+weighted avg     0.8013    0.7904    0.7913      5597
+

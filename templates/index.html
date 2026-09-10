@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotionX | Multimodal Emotion Recognition AI</title>
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            300: '#A3C9A8',
+                            400: '#84A98C',
+                            500: '#52796F',
+                            600: '#354F52',
+                            700: '#2F3E46'
+                        },
+                        olive: {
+                            500: '#6B8E23',
+                            600: '#4E6746'
+                        },
+                        terracotta: {
+                            500: '#E07A5F',
+                            600: '#C87D55'
+                        },
+                        peach: '#DDA15E'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Local Self-Hosted React 18 & ReactDOM -->
+    <script src="/static/vendor/react.production.min.js"></script>
+    <script src="/static/vendor/react-dom.production.min.js"></script>
+
+    <!-- Local Self-Hosted Babel Standalone -->
+    <script src="/static/vendor/babel.min.js"></script>
+
+    <!-- Serene Earth Theme Stylesheet -->
+    <link rel="stylesheet" href="/static/css/serene_earth.css">
+</head>
+<body class="bg-[#0B0F0E] text-slate-100 min-h-screen selection:bg-[#52796F] selection:text-white overflow-hidden">
+
+    <!-- React Mount Root -->
+    <div id="root"></div>
+
+    <!-- Audio Recorder Utility -->
+    <script src="/static/js/audio_recorder.js"></script>
+
+    <!-- Explicit Babel Transpile & Mount Runner -->
+    <script>
+        async function loadAndRunApp() {
+            try {
+                const res = await fetch('/static/js/react_app.js');
+                if (!res.ok) throw new Error('HTTP ' + res.status + ' loading /static/js/react_app.js');
+                const jsxCode = await res.text();
+                const transpiled = Babel.transform(jsxCode, {
+                    presets: [['react', { runtime: 'classic' }]]
+                }).code;
+                const script = document.createElement('script');
+                script.textContent = transpiled;
+                document.body.appendChild(script);
+            } catch (err) {
+                console.error('React Initialization Error:', err);
+                const root = document.getElementById('root');
+                if (root) {
+                    root.innerHTML = '<div style="color:#E07A5F;background:#181210;padding:24px;border:1px solid #E07A5F;border-radius:16px;margin:32px;font-family:monospace;font-size:13px;">' +
+                        '<h3 style="font-weight:bold;margin-bottom:8px;color:#FF758F;">⚠️ EmotionX Compilation Notice</h3>' +
+                        '<p style="color:#E07A5F;margin-bottom:12px;">' + (err.message || String(err)) + '</p>' +
+                        '<pre style="color:#A3C9A8;font-size:11px;overflow:auto;max-height:300px;white-space:pre-wrap;">' + (err.stack || '') + '</pre>' +
+                        '</div>';
+                }
+            }
+        }
+        window.addEventListener('DOMContentLoaded', loadAndRunApp);
+    </script>
+</body>
+</html>
